@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block title %} Contact{% endblock title %} {% block body %}
+<div class = "conatiner-fluid mx0"> 
+    <img src="static/img/abb.jpg" class="d-block w-100" alt="..." />
+    <h1 class = "text-center"> Contact us </h3>
+</div>
+<div class="container-fluid mb-3 py-4 mx20">
+    <form method = "post" action = "/contact">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" name = "email" id="exampleInputEmail1"aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <div class="mb-3">
+            <label for="name" class="form-label">name</label>
+            <input type="text" class="form-control" id="name" name = "name"  aria-describedby="name">
+            <div id="emailHelp" class="form-text">can we get your name</div>
+        </div>
+        <div class="mb-3">
+            <label for="phone_number" class="form-label">Phone number</label>
+            <input type="text" class="form-control" id="phone" name = "phone" aria-describedby="Phone Number">
+            <div id="emailHelp" class="form-text">can we get your name</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" name = "password"id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+
+{% endblock body %}
